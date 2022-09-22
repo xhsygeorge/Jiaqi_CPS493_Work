@@ -24,7 +24,7 @@
         <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
       </a>
   
-      <a role="button" class="navbar-burger" :class="{ 'is-active': isMenuOpen}" @click="isMenuOpen = !isMenuOpen" >
+      <a role="button" class="navbar-burger" :class="{ 'is-active': isMenuOpen }" @click="isMenuOpen = !isMenuOpen" >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -86,7 +86,7 @@
         <h2 class="subtitle">Learning about it in the best calss.</h2>
       </div>
     </div>
-    <div v-for="m in messages" class="notification is-success is-light" v-if="isNotificationVisible" id="app">
+    <div v-for="m in messages" class="notification is-success is-light" v-show="m.isVisible">
       <button class="delete" @click="m.isVisible = false"></button>
       {{ m.text }}
     </div>
@@ -101,10 +101,10 @@
             isNotificationVisible: true,
             isMenuOpen: false,
             messages: [
-            { text: "This class is awesome", isVisible: True},
-            { text: "Happy New Year", isVisible: True},
-            { text: "This class is awesome", isVisible: True},
-            { text: "Vue is awesome", isVisible: True},
+            { text: "This class is awesome", isVisible: true},
+            { text: "Happy New Year", isVisible: true},
+            { text: "George is doing well", isVisible: true},
+            { text: "Vue is awesome", isVisible: true},
             ]
           }
         },
@@ -113,7 +113,7 @@
             this.isNotificationVisible = false;
           }
         }
-      }).mount('#app')
+      }).mount('body');
 
     </script>
 </body>
