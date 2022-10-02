@@ -1,0 +1,26 @@
+{
+  "name": "jiaqi_cps493",
+  "version": "1.0.0",
+  "description": "CPS493_WebProgramming",
+  "scripts": {
+    "dev": "nodemon --watch server server/index.js",
+    "start": "node server/index.js"
+  },
+
+  "dependencies": {
+    "express": "4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhsygeorge/Jiaqi_CPS493_Work.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xhsygeorge/Jiaqi_CPS493_Work/issues"
+  },
+  "homepage": "https://github.com/xhsygeorge/Jiaqi_CPS493_Work#readme"
+}
