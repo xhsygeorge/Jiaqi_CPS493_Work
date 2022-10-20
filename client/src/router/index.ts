@@ -1,16 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import StoreView from "../views/StoreView.vue";
 import StatisticsView from "../views/StatisticsView.vue";
+import MyActivityView from "../views/MyActivityView.vue";
+import FriendsActivityView from "../views/FriendsActivityView.vue";
+import PeopleSearchView from "../views/PeopleSearchView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: "/",
-      name: "home",
-      component: HomeView,
-    },
     {
       //没有import AboutView from "../views/AboutView.vue"
       //用法和其他的不一样
@@ -19,14 +16,29 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
-      path: "/store",
-      name: "store",
-      component: StoreView,
+      path: "/",
+      name: "home",
+      component: HomeView,
+    },
+    {
+      path: "/myactivity",
+      name: "myactivity",
+      component: MyActivityView,
     },
     {
       path: "/statistics",
       name: "statistics",
       component: StatisticsView,
+    },
+    {
+      path: "/friendsactivity",
+      name: "friendsactivity",
+      component: FriendsActivityView,
+    },
+    {
+      path: "/peoplesearch",
+      name: "peoplesearch",
+      component: PeopleSearchView,
     },
   ],
 });
