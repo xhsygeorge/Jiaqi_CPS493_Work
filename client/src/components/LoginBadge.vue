@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import session, { login, logout } from '../stores/session'
+import session, { login, logout } from "../stores/session";
 </script>
 
 <template>
