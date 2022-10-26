@@ -5,6 +5,7 @@ import MyActivityView from "../views/MyActivityView.vue";
 import FriendsActivityView from "../views/FriendsActivityView.vue";
 import PeopleSearchView from "../views/PeopleSearchView.vue";
 import User from "../views/UserView.vue";
+import ProductsViewVue from "@/views/ProductsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +46,16 @@ const router = createRouter({
       path: "/user",
       name: "user",
       component: User,
+    },
+    {
+      path: "/products",
+      name: "products",
+      component: ProductsView,
+    },
+    {
+      path: "/product/:id",
+      name: Product,
+      component: ProductDetailsView,
     },
   ],
 });
