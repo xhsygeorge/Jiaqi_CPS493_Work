@@ -9,6 +9,12 @@ module.exports = {
     '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier'
   ],
+  "prettier/prettier": [
+    "error",
+    {
+      "endOfLine": "auto"
+    },
+  ],
   parserOptions: {
     ecmaVersion: 'latest'
   }
