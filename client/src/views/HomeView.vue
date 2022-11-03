@@ -1,9 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+
+</script>
+
 <template>
-<div>
-  <h1 class="title">Home Page</h1>
-  <h2 class="subtitle">Welcome Back</h2>
-</div>
-
-
+  <main>
+    <h1 class="title">Home Page</h1>
+    <h2 class="subtitle">The page where you land</h2>
+  </main>
 </template>
