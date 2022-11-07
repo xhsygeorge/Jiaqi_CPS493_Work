@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "CPS493_WebProgramming",
   "scripts": {
+    "build": "npm i -ws && npm run build -ws",
     "dev": "nodemon --watch server server/index.js",
     "start": "node server/index.js"
   },
-
+  "workspaces": [
+    "client"
+  ],
   "dependencies": {
     "express": "4.18.1"
   },
