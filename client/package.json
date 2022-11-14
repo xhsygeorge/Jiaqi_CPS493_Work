@@ -4,7 +4,6 @@
   "description": "",
   "author": "",
   "license": "ISC",
-
   "scripts": {
     "build": "npm i -ws && npm run build -ws",
     "dev": "nodemon --watch server server/index.js",
@@ -17,9 +16,9 @@
     "express": "^4.18.1"
   },
   "devDependencies": {
+    "@vue/tsconfig": "^0.1.3",
     "nodemon": "^2.0.20"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jewpaltz/2022-fall-web-dev.git"
