@@ -3,12 +3,20 @@
 const list = [];
 
 ;
+
+/**
+ * 
+ * @param {number} productId 
+ * @param {string} userId 
+ * @param {number} quantity 
+ * @returns 
+ */
 const add = (productId, userId, quantity) => {
     let cartItem = list.find((cartItem) => cartItem.userId === userId && cartItem.productId === productId);
     if (cartItem) {
         cartItem.quantity += +quantity;
     } else {
-        list.push({ id: list.length + 1, quantity: +quantity, productId, userId });
+        list.push({ id: list.length + 1, quantity, productId, userId });
     }
     return cartItem;
 };
