@@ -39,18 +39,18 @@ const add = (userId, productId, quantity) => {
  */
 const update = (userId, productId, quantity) => {
     console.log(userId, productId, quantity);
-    const index = list.findIndex((cartItem) => cartItem.userId === userId && cartItem.productId === productId);
-    if (index !== -1) {
-        if(quantity === 0) {
-            list.splice(index, 1);
-            return "null";
-        } else {
-            list[index].quantity = quantity;
-        }
+  const index = list.findIndex((cartItem) => cartItem.userId === userId && cartItem.productId === productId);
+  if (index !== -1) {
+    if(quantity === 0) {
+        list.splice(index, 1);
+        return "null";
     } else {
-        throw new Error('Cart item not found');
+        list[index].quantity = quantity;
     }
-    return { ...list[index], product: getProduct(productId)};;
+  }else {
+        throw new Error('Cart item not found');
+  }
+  return { ...list[index], product: getProduct(productId) };
 }
 
 module.exports = { add, get, update }
