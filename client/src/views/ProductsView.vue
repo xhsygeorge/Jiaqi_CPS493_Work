@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import { addProductToCart } from "../stores/cart";
+    import { isLoading } from "../stores/session";
     import { computed, reactive, ref, watch } from "vue";
     import { RouterLink } from "vue-router";
     import { getProducts, type Product } from "../stores/products";
@@ -25,8 +26,9 @@
         </div>
         
         <div class="products">
-            <RouterLink class="product" v-for="product in products" 
-                        :key="product.id" :to="`/product/${product.id}`"
+            <RouterLink v-for="product in products" :key="product.id" 
+                        class="product" :class="{ 'is-disabled': isLoading }"
+                        :to="`/product/${product.id}`"
                         v-show="product.title.toLowerCase().includes(search.toLowerCase())">
                 <div class="product-image">
                     <img :src="product.thumbnail" :alt="product.title" />
@@ -34,7 +36,12 @@
                 <div class="product-info">
                     <b>{{ product.title }}</b>
                     <p>{{ product.description }}</p>
-                    <button class="button is-small is-primary is-rounded add" @click.prevent="addToCart(product)">+</button>
+                    <button class="button is-small is-primary is-rounded add"
+                            :class="{ 'is-loading': isLoading }"
+                            @click.prevent="addToCart(product)">
+                                +
+                    </button>
+                    
                     <p class="price">
                         <span class="currency">$</span>
                         <span class="amount">{{ product.price }}</span>
@@ -54,6 +61,11 @@
 
     .add {
         float: right;
+    }
+
+    .is-disabled {
+        pointer-events: none;
+        opacity: .7;
     }
 
     .product {
