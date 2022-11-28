@@ -42,7 +42,8 @@
         width: max-content;
         max-width: 300px;
     }
-    .navbar-item.has-dropdown .notification { /* made this more specific. So that it has a stronger effect */
+    .navbar-item.has-dropdown .notification { 
+    /* made this more specific. So that it has a stronger effect */
         margin: .5rem;
         width: calc(100% - 1rem);
     }
