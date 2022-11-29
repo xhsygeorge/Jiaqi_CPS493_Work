@@ -1,5 +1,5 @@
 import { reactive, watch } from "vue";
-import type {  Product } from "./products";
+import type { Product } from "./products";
 import session, { api } from "./session";
 
 const PATCH = 'PATCH';
