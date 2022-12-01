@@ -21,5 +21,5 @@ async function getProduct(id) {
 
 module.exports = {
     getProducts,
-    getProduct
+    getProduct,
 };
