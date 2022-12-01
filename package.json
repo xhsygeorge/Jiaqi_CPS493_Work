@@ -1,7 +1,7 @@
 {
-  "name": "jiaqi_cps493",
+  "name": "jiaqi_cps493_final_work",
   "version": "1.0.0",
-  "description": "CPS493_WebProgramming",
+  "description": "CPS493_WebProgramming_Final_Project",
   "scripts": {
     "build": "npm i -ws && npm run build -ws",
     "dev": "nodemon --watch server server/index.js",
