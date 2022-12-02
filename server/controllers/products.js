@@ -6,7 +6,7 @@ const app = express.Router();
 app
     .get('/', (req, res, next) => {
         products.getProducts()
-        .then(x=>res.status(200).send({products:x}))
+        .then(x=>res.status(200).send(x))
         .catch(next)
         //res.status(200).send(products.getProducts());
     })
@@ -20,6 +20,11 @@ app
         } else {
             res.status(404).send('Product not found');
         }
+    })
+    .post('/seed', (req, res, next) => {
+        products.seed()
+        .then(x=>res.status(200).send(x))
+        .catch(next)
     });
 
 
