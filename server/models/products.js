@@ -6,7 +6,7 @@ const COLLECTION_NAME = 'products';
 
 async function collection() {
     const client = await connect();
-    return client.db('chopiphy').collection('products');
+    return client.db('chopiphy').collection(COLLECTION_NAME);
 }
 
 async function getProducts(limit=30, skip=0) {
