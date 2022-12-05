@@ -12,7 +12,7 @@ app
     })
     .get('/:id', (req, res) => {
 
-        products.getProduct(+req.params.id)
+        products.getProduct(req.params.id)
         .then(x=>res.status(200).send(x))
         .catch(next)
         if (product) {
