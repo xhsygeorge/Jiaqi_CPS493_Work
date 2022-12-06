@@ -10,6 +10,16 @@ app
         .catch(next)
         //res.status(200).send(products.getProducts());
     })
+    .get('/brands', (req, res, next) => {
+        products.getBrands()
+        .then(x=> res.status(200).send(x))
+        .catch(next);
+    })
+    .get('/categories', (req, res, next) => {
+        products.getCategories()
+        .then(x=> res.status(200).send(x))
+        .catch(next);
+    })
     .get('/:id', (req, res) => {
 
         products.getProduct(req.params.id)

@@ -12,7 +12,19 @@ async function collection() {
 async function getProducts(limit=30, skip=0) {
     const db = await collection();
     const data =await db.find().limit(limit).skip(skip).toArray();
-    return {total:(await data).length, length: (await data).length, products:data};
+    return {total:data.length, length: data.length, products:data};
+}
+
+async function getBrands() {
+    const db = await collection();
+    const data = await db.distinct('brand')
+    return data;
+}
+
+async function getCategories() {
+    const db = await collection();
+    const data = await db.distinct('category')
+    return data;
 }
 
 async function getProduct(id) {
@@ -55,6 +67,8 @@ module.exports = {
     COLLECTION_NAME,
     collection,
     getProducts,
+    getBrands,
+    getCategories,
     getProduct,
     addProduct,
     updateProduct,
