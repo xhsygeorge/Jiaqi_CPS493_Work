@@ -1,4 +1,4 @@
-import myFetch from "@/services/myFetch";
+import {myFetch} from "@/services/myFetch";
 const OPEN_AI_KEY=import.meta.env.VITE_OPEN_AI_KEY;
 export function gptApi(url:string, data?:any, method?:string, headers?:HeadersInit){
     headers = {
