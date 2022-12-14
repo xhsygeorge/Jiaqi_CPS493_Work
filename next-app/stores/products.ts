@@ -1,4 +1,4 @@
-import api from "../services/myFetch";
+import { api } from "./session";
 
 export function getProducts() {
   return api<ListEnvelope<Product>>('products');
